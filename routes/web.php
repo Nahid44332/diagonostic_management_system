@@ -82,6 +82,7 @@ Route::get('/admin/doctorshedule-view/{id}', [DoctorSheduleController::class, 'd
 Route::get('/admin/doctorshedule-edit/{id}', [DoctorSheduleController::class, 'doctorSheduleEdit']);
 Route::post('/admin/doctorshedule-update/{id}', [DoctorSheduleController::class, 'doctorSheduleUpdate']);
 Route::get('/admin/doctorshedule-delete/{id}', [DoctorSheduleController::class, 'doctorSheduleDelete']);
+Route::post('/admin/doctorshedule-status-update/{id}', [DoctorSheduleController::class, 'statusUpdate']);
 
 
 //Depertment.........
