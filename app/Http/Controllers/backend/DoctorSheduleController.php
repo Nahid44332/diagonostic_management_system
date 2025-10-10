@@ -28,7 +28,7 @@ class DoctorSheduleController extends Controller
     {
         $schedule = new DoctorShedule();
 
-         $schedule->doctor_id = $request->doctor_id;
+        $schedule->doctor_id = $request->doctor_id;
         $schedule->day = $request->day;
         $schedule->start_time = $request->start_time;
         $schedule->end_time = $request->end_time;
@@ -42,14 +42,14 @@ class DoctorSheduleController extends Controller
 
     public function doctorSheduleView($id)
     {
-        $schedule = DoctorShedule::find($id);
+        $schedule = DoctorShedule::with('doctor')->find($id);
         return view('backend.doctor-shedule.shedule-view', compact('schedule'));
     }
 
 
     public function doctorSheduleEdit($id)
     {
-        $schedule = DoctorShedule::findOrFail($id);
+        $schedule = DoctorShedule::with('doctor')->find($id);
         return view('backend.doctor-shedule.shedule-edit', compact('schedule'));
     }
 
